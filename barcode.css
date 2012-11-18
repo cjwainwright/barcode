@@ -1,7 +1,6 @@
 .barcode {
     height: 5em;
     display: inline-block;
-    font-size: 50px;
 }
 
 .bcs, .bcm, .bce {

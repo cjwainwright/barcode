@@ -2,28 +2,51 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="barcode.css" />
+        <style>
+            .barcode {
+                font-size: 30px;
+                padding: 0em 0em 1em;
+            }
+        </style>
+        <script type="text/javascript" src="barcode.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var b = barcode.createUPCA("03600029145x");
+                document.getElementById("jsoutput").appendChild(b);
+            }
+        </script>
     </head>
     <body>
-        <span class="barcode upc-a">
-            <i class="bcs"></i><!--
-         --><span class="bcl"><!--
-            --><b class="bc0"></b><!--
-            --><b class="bc3"></b><!--
-            --><b class="bc6"></b><!--
-            --><b class="bc0"></b><!--
-            --><b class="bc0"></b><!--
-            --><b class="bc0"></b><!--
-         --></span><!--
-         --><i class="bcm"></i><!--
-         --><span class="bcr"><!--
-            --><b class="bc2"></b><!--
-            --><b class="bc9"></b><!--
-            --><b class="bc1"></b><!--
-            --><b class="bc4"></b><!--
-            --><b class="bc5"></b><!--
-            --><b class="bc2"></b><!--
-         --></span><!--
-         --><i class="bce"></i>
-        </span>
+        <p>
+            Barcodes can be created directly with HTML
+        </p>
+        <p>
+            <span class="barcode upc-a">
+                <i class="bcs"></i><!--
+             --><span class="bcl"><!--
+                --><b class="bc0"></b><!--
+                --><b class="bc3"></b><!--
+                --><b class="bc6"></b><!--
+                --><b class="bc0"></b><!--
+                --><b class="bc0"></b><!--
+                --><b class="bc0"></b><!--
+             --></span><!--
+             --><i class="bcm"></i><!--
+             --><span class="bcr"><!--
+                --><b class="bc2"></b><!--
+                --><b class="bc9"></b><!--
+                --><b class="bc1"></b><!--
+                --><b class="bc4"></b><!--
+                --><b class="bc5"></b><!--
+                --><b class="bc2"></b><!--
+             --></span><!--
+             --><i class="bce"></i>
+            </span>
+        </p>
+        <p>
+            Or using a JavaScript helper function
+        </p>
+        <p id="jsoutput">
+        </p>
     </body>
 </html>
