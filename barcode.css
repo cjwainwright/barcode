@@ -1,0 +1,122 @@
+.barcode {
+    height: 5em;
+    display: inline-block;
+    font-size: 50px;
+}
+
+.bcs, .bcm, .bce {
+    display: inline-block;
+    height: 100%;
+}
+
+.bc0, .bc1, .bc2, .bc3, .bc4, .bc5, .bc6, .bc7, .bc8, .bc9 {
+    position: relative;
+    background-repeat: repeat-y;
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+
+.bc0:after, .bc1:after, .bc2:after, .bc3:after, .bc4:after, .bc5:after, .bc6:after, .bc7:after, .bc8:after, .bc9:after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -1em;
+    text-align: center;
+}
+
+.bc0:after { content: "0"; }
+.bc1:after { content: "1"; }
+.bc2:after { content: "2"; }
+.bc3:after { content: "3"; }
+.bc4:after { content: "4"; }
+.bc5:after { content: "5"; }
+.bc6:after { content: "6"; }
+.bc7:after { content: "7"; }
+.bc8:after { content: "8"; }
+.bc9:after { content: "9"; }
+
+/* UPC modules
+
+each digit we make 0.1em wide
+start   101
+end     101
+middle  01010
+
+Number 	Left Digits 	Right Digits
+    0 	0001101 	1110010
+    1 	0011001 	1100110
+    2 	0010011 	1101100
+    3 	0111101 	1000010
+    4 	0100011 	1011100
+    5 	0110001 	1001110
+    6 	0101111 	1010000
+    7 	0111011 	1000100
+    8 	0110111 	1001000
+    9 	0001011 	1110100
+*/
+
+.bcs, .bce {
+    padding-bottom: 0.7em;
+    width: 0.3em;
+}
+
+.bcm {
+    padding-bottom: 0.7em;
+    width: 0.5em;
+}
+
+.bc0, .bc1, .bc2, .bc3, .bc4, .bc5, .bc6, .bc7, .bc8, .bc9 {
+    width: 0.7em;
+}
+
+.bcs, .bce { background-image: linear-gradient(90deg, black 33.33%, transparent 0, transparent 66.67%, black 0); }
+.bcm { background-image: linear-gradient(90deg, transparent 20%, black 0, black 40%, transparent 0, transparent 60%, black 0, black 80%, transparent 0); }
+            
+.bcl > .bc0 {	background-image: linear-gradient(90deg, transparent 42.86%, black 0, black 71.43%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc0 {	background-image: linear-gradient(90deg, black 42.86%, transparent 0, transparent 71.43%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc1 {	background-image: linear-gradient(90deg, transparent 28.57%, black 0, black 57.14%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc1 {	background-image: linear-gradient(90deg, black 28.57%, transparent 0, transparent 57.14%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc2 {	background-image: linear-gradient(90deg, transparent 28.57%, black 0, black 42.86%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc2 {	background-image: linear-gradient(90deg, black 28.57%, transparent 0, transparent 42.86%, black 0, black 71.43%, transparent 0);	}
+.bcl > .bc3 {	background-image: linear-gradient(90deg, transparent 14.29%, black 0, black 71.43%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc3 {	background-image: linear-gradient(90deg, black 14.29%, transparent 0, transparent 71.43%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc4 {	background-image: linear-gradient(90deg, transparent 14.29%, black 0, black 28.57%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc4 {	background-image: linear-gradient(90deg, black 14.29%, transparent 0, transparent 28.57%, black 0, black 71.43%, transparent 0);	}
+.bcl > .bc5 {	background-image: linear-gradient(90deg, transparent 14.29%, black 0, black 42.86%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc5 {	background-image: linear-gradient(90deg, black 14.29%, transparent 0, transparent 42.86%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc6 {	background-image: linear-gradient(90deg, transparent 14.29%, black 0, black 28.57%, transparent 0, transparent 42.86%, black 0);	}
+.bcr > .bc6 {	background-image: linear-gradient(90deg, black 14.29%, transparent 0, transparent 28.57%, black 0, black 42.86%, transparent 0);	}
+.bcl > .bc7 {	background-image: linear-gradient(90deg, transparent 14.29%, black 0, black 57.14%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc7 {	background-image: linear-gradient(90deg, black 14.29%, transparent 0, transparent 57.14%, black 0, black 71.43%, transparent 0);	}
+.bcl > .bc8 {	background-image: linear-gradient(90deg, transparent 14.29%, black 0, black 42.86%, transparent 0, transparent 57.14%, black 0);	}
+.bcr > .bc8 {	background-image: linear-gradient(90deg, black 14.29%, transparent 0, transparent 42.86%, black 0, black 57.14%, transparent 0);	}
+.bcl > .bc9 {	background-image: linear-gradient(90deg, transparent 42.86%, black 0, black 57.14%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc9 {	background-image: linear-gradient(90deg, black 42.86%, transparent 0, transparent 57.14%, black 0, black 71.43%, transparent 0);	}
+
+/*prefixed styles, yuk!*/
+
+.bcs, .bce { background-image: -webkit-linear-gradient(left, black 33.33%, transparent 0, transparent 66.67%, black 0); }
+.bcm { background-image: -webkit-linear-gradient(left, transparent 20%, black 0, black 40%, transparent 0, transparent 60%, black 0, black 80%, transparent 0); }
+            
+.bcl > .bc0 {	background-image: -webkit-linear-gradient(left, transparent 42.86%, black 0, black 71.43%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc0 {	background-image: -webkit-linear-gradient(left, black 42.86%, transparent 0, transparent 71.43%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc1 {	background-image: -webkit-linear-gradient(left, transparent 28.57%, black 0, black 57.14%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc1 {	background-image: -webkit-linear-gradient(left, black 28.57%, transparent 0, transparent 57.14%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc2 {	background-image: -webkit-linear-gradient(left, transparent 28.57%, black 0, black 42.86%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc2 {	background-image: -webkit-linear-gradient(left, black 28.57%, transparent 0, transparent 42.86%, black 0, black 71.43%, transparent 0);	}
+.bcl > .bc3 {	background-image: -webkit-linear-gradient(left, transparent 14.29%, black 0, black 71.43%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc3 {	background-image: -webkit-linear-gradient(left, black 14.29%, transparent 0, transparent 71.43%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc4 {	background-image: -webkit-linear-gradient(left, transparent 14.29%, black 0, black 28.57%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc4 {	background-image: -webkit-linear-gradient(left, black 14.29%, transparent 0, transparent 28.57%, black 0, black 71.43%, transparent 0);	}
+.bcl > .bc5 {	background-image: -webkit-linear-gradient(left, transparent 14.29%, black 0, black 42.86%, transparent 0, transparent 85.71%, black 0);	}
+.bcr > .bc5 {	background-image: -webkit-linear-gradient(left, black 14.29%, transparent 0, transparent 42.86%, black 0, black 85.71%, transparent 0);	}
+.bcl > .bc6 {	background-image: -webkit-linear-gradient(left, transparent 14.29%, black 0, black 28.57%, transparent 0, transparent 42.86%, black 0);	}
+.bcr > .bc6 {	background-image: -webkit-linear-gradient(left, black 14.29%, transparent 0, transparent 28.57%, black 0, black 42.86%, transparent 0);	}
+.bcl > .bc7 {	background-image: -webkit-linear-gradient(left, transparent 14.29%, black 0, black 57.14%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc7 {	background-image: -webkit-linear-gradient(left, black 14.29%, transparent 0, transparent 57.14%, black 0, black 71.43%, transparent 0);	}
+.bcl > .bc8 {	background-image: -webkit-linear-gradient(left, transparent 14.29%, black 0, black 42.86%, transparent 0, transparent 57.14%, black 0);	}
+.bcr > .bc8 {	background-image: -webkit-linear-gradient(left, black 14.29%, transparent 0, transparent 42.86%, black 0, black 57.14%, transparent 0);	}
+.bcl > .bc9 {	background-image: -webkit-linear-gradient(left, transparent 42.86%, black 0, black 57.14%, transparent 0, transparent 71.43%, black 0);	}
+.bcr > .bc9 {	background-image: -webkit-linear-gradient(left, black 42.86%, transparent 0, transparent 57.14%, black 0, black 71.43%, transparent 0);	}
+
